@@ -1,0 +1,176 @@
+body {
+  width: 500px;
+  padding: 15px;
+  font-family: 'Noto Sans KR', sans-serif;
+  background-color: #f5f5f5;
+}
+
+h2 {
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+}
+
+button {
+  flex: 1;
+  padding: 10px;
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+button.gray {
+  background-color: #808080;
+}
+
+button:hover {
+  background-color: #3367d6;
+}
+
+button.gray:hover {
+  background-color: #666666;
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+.content-area {
+  margin-top: 20px;
+}
+
+.feature-area {
+  display: none;
+  padding: 20px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  min-height: 200px;
+  margin-top: 15px;
+}
+
+.feature-area.active {
+  display: block;
+}
+
+.terms-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.terms-table th,
+.terms-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.terms-table th {
+  background-color: #4285f4;
+  color: white;
+  font-weight: 500;
+}
+
+.terms-table tr:hover {
+  background-color: #f8f9fa;
+}
+
+.terms-table td:first-child {
+  font-weight: 500;
+  color: #333;
+  width: 120px;
+}
+
+.terms-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pagination {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 10px;
+}
+
+.pagination button {
+  padding: 8px 20px;
+  border: 1px solid #4a90e2;
+  background-color: white;
+  color: #4a90e2;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+  background-color: #4a90e2;
+  color: white;
+}
+
+.pagination button:disabled {
+  background-color: #f5f5f5;
+  border-color: #ddd;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.pagination span {
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border-radius: 4px;
+  color: #333;
+  font-size: 14px;
+  min-width: 80px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.search-container {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+#searchInput {
+  flex: 1;
+  padding: 8px 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+#searchButton {
+  padding: 8px 16px;
+  background-color: #4a90e2;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#searchButton:hover {
+  background-color: #357abd;
+}
+
+/* 검색 결과 하이라이트 스타일 */
+.highlight {
+  background-color: #fff3cd;
+  padding: 2px;
+}

@@ -1,0 +1,972 @@
+{
+  "terms": [
+    {
+      "term": "금일 (Today)",
+      "description": "오늘을 뜻하는 비즈니스 용어. 주로 문서나 이메일에서 사용."
+    },
+    {
+      "term": "구두 (Verbal)",
+      "description": "말로 전달하는 것을 의미."
+    },
+    {
+      "term": "급번 (Urgent Contact)",
+      "description": "긴급하게 연락할 수 있는 전화번호나 연락처를 의미."
+    },
+    {
+      "term": "급주 (Urgent Delivery)",
+      "description": "긴급하게 전달하거나 보내는 것을 의미."
+    },
+    {
+      "term": "치주 (Replace)",
+      "description": "기존 문서나 파일을 새로운 것으로 교체하는 것을 의미."
+    },
+    {
+      "term": "확인 (Confirmation)",
+      "description": "어떤 사항을 체크하거나 검증하는 것을 의미."
+    },
+    {
+      "term": "조율 (Coordination)",
+      "description": "일정, 의견, 계획 등을 맞추거나 조정하는 것."
+    },
+    {
+      "term": "검토 (Review)",
+      "description": "문서나 제안서를 살펴보고 평가하는 것."
+    },
+    {
+      "term": "협의 (Consultation)",
+      "description": "어떤 사안을 논의하고 결론을 내리는 과정."
+    },
+    {
+      "term": "회신 (Reply)",
+      "description": "이메일이나 메시지에 대한 답변을 의미."
+    },
+    {
+      "term": "진행 (Progress)",
+      "description": "업무나 프로젝트를 앞으로 나아가게 하는 과정."
+    },
+    {
+      "term": "요청 (Request)",
+      "description": "어떤 일을 부탁하거나 요구하는 것."
+    },
+    {
+      "term": "배포 (Distribution)",
+      "description": "문서나 정보를 여러 사람에게 나누어 주는 것."
+    },
+    {
+      "term": "공유 (Sharing)",
+      "description": "정보를 다른 사람들과 나누는 것."
+    },
+    {
+      "term": "보고 (Reporting)",
+      "description": "상사나 팀에게 업무 진행 상황을 알리는 것."
+    },
+    {
+      "term": "참조 (Reference)",
+      "description": "이메일에서 참고용으로 누군가를 포함하거나 정보를 제공하는 것."
+    },
+    {
+      "term": "조치 (Action)",
+      "description": "문제를 해결하거나 필요한 행동을 취하는 것."
+    },
+    {
+      "term": "일정 (Scheduling)",
+      "description": "업무나 회의의 계획과 시간표를 뜻함."
+    },
+    {
+      "term": "배정 (Assignment)",
+      "description": "특정 업무를 담당자에게 할당하는 것."
+    },
+    {
+      "term": "상기 (Reminder)",
+      "description": "이전에 언급된 내용을 다시 상기시키는 것."
+    },
+    {
+      "term": "결재 (Approval)",
+      "description": "상사나 관리자로부터 공식적으로 승인을 받는 과정."
+    },
+    {
+      "term": "결제 (Payment)",
+      "description": "물품이나 서비스에 대한 대금을 지불하는 것."
+    },
+    {
+      "term": "전표 (Slip)",
+      "description": "거래 내역을 기록한 회계 문서."
+    },
+    {
+      "term": "품의서 (Request for Approval)",
+      "description": "회사 내에서 특정 사안에 대한 승인을 요청하는 공식 문서."
+    },
+    {
+      "term": "기안서 (Draft Document)",
+      "description": "업무와 관련된 내용을 공식적으로 제안하거나 보고하는 문서."
+    },
+    {
+      "term": "지시 (Instruction)",
+      "description": "상사가 내리는 업무 지침이나 명령."
+    },
+    {
+      "term": "양식 (Form)",
+      "description": "회사에서 정해진 문서 템플릿이나 형식."
+    },
+    {
+      "term": "마감 (Closing)",
+      "description": "업무나 프로젝트를 완료해야 하는 최종 기한."
+    },
+    {
+      "term": "누락 (Omission)",
+      "description": "문서나 정보에서 빠진 부분이 있음을 의미."
+    },
+    {
+      "term": "반려 (Return/Reject)",
+      "description": "제출된 문서나 요청을 승인하지 않고 되돌려 보내는 것."
+    },
+    {
+      "term": "상기 (Above-mentioned)",
+      "description": "앞에서 언급한 내용을 가리킴."
+    },
+    {
+      "term": "송부 (Send/Submit)",
+      "description": "문서나 자료를 보내는 것."
+    },
+    {
+      "term": "유선상 (Via Phone)",
+      "description": "전화를 통한 연락을 의미."
+    },
+    {
+      "term": "어렌지 (Arrange)",
+      "description": "회의나 일정을 조정하고 준비하는 것."
+    },
+    {
+      "term": "팔로우업 (Follow-up)",
+      "description": "이전에 논의된 사항이나 업무의 진행 상황을 확인하고 후속 조치를 취하는 것."
+    },
+    {
+      "term": "피드백 (Feedback)",
+      "description": "의견이나 평가를 제공하는 것."
+    },
+    {
+      "term": "컨펌 (Confirm)",
+      "description": "계획이나 내용을 최종적으로 확인하고 승인하는 것."
+    },
+    {
+      "term": "ASAP (As Soon As Possible)",
+      "description": "가능한 한 빨리 처리해야 하는 긴급한 사항을 의미."
+    },
+    {
+      "term": "FYI (For Your Information)",
+      "description": "참고로 알아두라는 의미로, 정보 공유 시 사용."
+    },
+    {
+      "term": "CC (Carbon Copy)",
+      "description": "이메일에서 참조 수신자를 지정할 때 사용."
+    },
+    {
+      "term": "PM (Project Manager)",
+      "description": "프로젝트를 총괄하고 관리하는 책임자."
+    },
+    {
+      "term": "RSVP (Répondez S'il Vous Plaît)",
+      "description": "발신자가 회신을 기다리고 있다는 의미(꼭 회신 해야 함)."
+    },
+    {
+      "term": "작일 (Yesterday)",
+      "description": "어제를 의미하는 업무용어."
+    },
+    {
+      "term": "명일 (Tomorrow)",
+      "description": "내일을 의미하는 업무용어."
+    },
+    {
+      "term": "익일 (Next day)",
+      "description": "다음날을 의미하는 업무용어."
+    },
+    {
+      "term": "전일 (Previous day)",
+      "description": "이전날을 의미하는 업무용어."
+    },
+    {
+      "term": "서면 (Written document)",
+      "description": "문서로 작성된 형태의 자료나 의견을 의미."
+    },
+    {
+      "term": "상신 (Submit to superior)",
+      "description": "상급자나 의사결정권자에게 문서를 제출하는 것."
+    },
+    {
+      "term": "재가 (Final approval)",
+      "description": "최종 승인을 의미하며, 주로 고위 결정권자의 승인을 말함."
+    },
+    {
+      "term": "배상 (Compensation)",
+      "description": "손해나 피해에 대한 보상을 하는 것."
+    },
+    {
+      "term": "R&R (Roles and Responsibilities)",
+      "description": "조직이나 프로젝트에서 각자의 역할과 책임을 정의한 것."
+    },
+    {
+      "term": "아젠다 (Agenda)",
+      "description": "회의나 프로젝트에서 다룰 주제나 안건 목록."
+    },
+    {
+      "term": "킥오프 (Kick-off)",
+      "description": "프로젝트나 업무의 시작을 알리는 첫 회의나 행사."
+    },
+    {
+      "term": "백업 (Backup)",
+      "description": "데이터나 업무의 안전한 보관을 위해 복사본을 만들어두는 것."
+    },
+    {
+      "term": "각출 (Individual Payment)",
+      "description": "각자의 비용을 각자 지불하는 것"
+    },
+    {
+      "term": "갹출 (Joint Payment)",
+      "description": "같은 목적을 위해 여러 사람이 돈을 나눠 내는 것"
+    },
+    {
+      "term": "격무 (Heavy Workload)",
+      "description": "몹시 고된 업무"
+    },
+    {
+      "term": "격일 (Alternate Day)",
+      "description": "하루를 거름 (ex. 이번 콘텐츠는 월, 수, 금 격일 발행 하겠습니다)"
+    },
+    {
+      "term": "공란 (Blank Space)",
+      "description": "비워둔 칸"
+    },
+    {
+      "term": "공람 (Circular)",
+      "description": "여러 사람이 봄. 또는 여러 사람이 보게 함"
+    },
+    {
+      "term": "공문 (Official Document)",
+      "description": "공공기관이나 단체에서 공식적으로 작성한 문서"
+    },
+    {
+      "term": "공제 (Deduction)",
+      "description": "받을 몫에서 일정한 금액을 뺌"
+    },
+    {
+      "term": "귀사 (Your Company)",
+      "description": "주로 편지글에서 상대방의 회사를 높여 이르는 말"
+    },
+    {
+      "term": "금번 (This Time)",
+      "description": "이번 (ex. 금번에도 동일한 절차로 처리하겠습니다)"
+    },
+    {
+      "term": "금주 (This Week)",
+      "description": "이번주"
+    },
+    {
+      "term": "기재 (Write Down)",
+      "description": "문서에 기록하다"
+    },
+    {
+      "term": "납기 (Delivery Date)",
+      "description": "고객에게 주문받은 물품이나 결과물을 가져다줘야 하는 마감 기한"
+    },
+    {
+      "term": "노무 (Labor Affairs)",
+      "description": "①노동 ②노동과 관련된 사무"
+    },
+    {
+      "term": "노티 (Notice)",
+      "description": "알리다, 공지하다"
+    },
+    {
+      "term": "당기순이익 (Net Income)",
+      "description": "일정 회계기간동안 발생한 전체 수익에서 비용을 차감한 금액"
+    },
+    {
+      "term": "당사 (Our Company)",
+      "description": "바로 그 회사, 또는 바로 이 회사"
+    },
+    {
+      "term": "당일 (The Day)",
+      "description": "특정한 바로 그 날 ≠오늘 (ex. 제품에 이상이 없는지 수령한 당일에 확인해주세요)"
+    },
+    {
+      "term": "대결 (Acting Approval)",
+      "description": "기존의 결재권자가 결재할 수 없을 때 그 직무를 대리하는 자가 결재하는 것"
+    },
+    {
+      "term": "대금 (Payment)",
+      "description": "물건의 값으로 치르는 돈"
+    },
+    {
+      "term": "대외비 (Confidential)",
+      "description": "외부에 알리지 않기로 한 비밀"
+    },
+    {
+      "term": "더블체크 (Double check)",
+      "description": "오류가 없는지 재확인하는 것"
+    },
+    {
+      "term": "데드라인 (Deadline)",
+      "description": "마감일"
+    },
+    {
+      "term": "도메인 (Domain)",
+      "description": "①비즈니스가 속한 산업 분야, 영역, 환경 전반을 일컫는 말 ②인터넷 주소(URL)의 일부"
+    },
+    {
+      "term": "듀데이트 (Due date)",
+      "description": "마감 기한"
+    },
+    {
+      "term": "디벨롭 (Develop)",
+      "description": "발전시키다, 구체화하다"
+    },
+    {
+      "term": "램프업 (Ramp up)",
+      "description": "생산 능력 등을 늘리다"
+    },
+    {
+      "term": "랩업 (Wrap up)",
+      "description": "회고"
+    },
+    {
+      "term": "러프 (Rough)",
+      "description": "거친, 대략적인 (ex. 아직 확정된 프로젝트가 아니니 러프하게 기획안 준비해주세요)"
+    },
+    {
+      "term": "레거시 (Legacy)",
+      "description": "현재까지 쓰이는 낡은 기존 시스템 또는 현재 체계에 영향을 미치는 과거의 시스템"
+    },
+    {
+      "term": "레슨런 (Lesson learned)",
+      "description": "성공 또는 실패의 경험을 통해 교훈을 얻는 것"
+    },
+    {
+      "term": "레퍼런스 (Reference)",
+      "description": "참고 자료"
+    },
+    {
+      "term": "로우데이터 (Raw data)",
+      "description": "가공하지 않은 원본 자료"
+    },
+    {
+      "term": "룩앤필 (Look & Feel)",
+      "description": "제품의 겉모양이나 인터페이스 등 눈에 보이는 시각적 요소"
+    },
+    {
+      "term": "리소스 (Resource)",
+      "description": "인력, 시간, 돈 등 업무에 투입되는 자원"
+    },
+    {
+      "term": "리스트업 (List up)",
+      "description": "데이터를 목록화하는 것 (ex. 섭외 후보 리스트업해주세요)"
+    },
+    {
+      "term": "린 (Lean)",
+      "description": "군살이 없는, 낭비 없이 효율적인 운영 방식을 가리킨다 (ex. 일단 린하게 실행부터 해봅시다)"
+    },
+    {
+      "term": "릴리즈 (Release)",
+      "description": "발표, 배포, 출시"
+    },
+    {
+      "term": "마이그레이션 (Migration)",
+      "description": "데이터 등을 새로운 운영 체계로 옮겨가는 과정"
+    },
+    {
+      "term": "마일스톤 (Milestone)",
+      "description": "단기적 사업 목표"
+    },
+    {
+      "term": "마켓 (Market)",
+      "description": "시장"
+    },
+    {
+      "term": "마켓쉐어 (Market share)",
+      "description": "시장점유율"
+    },
+    {
+      "term": "맨먼스 (Man/Month)",
+      "description": "한 사람이 한 달 동안 수행할 수 있는 작업량"
+    },
+    {
+      "term": "미수금 (Accounts Receivable)",
+      "description": "아직 거둬들이지 못한 돈"
+    },
+    {
+      "term": "바텀업 (Bottom up)",
+      "description": "실무자가 업무를 기획해 윗선에 보고하여 일을 진행하는 방식. 탑다운과 반대 개념"
+    },
+    {
+      "term": "별첨 (Attachment)",
+      "description": "서류를 따로 첨부함"
+    },
+    {
+      "term": "분장 (Division of Duties)",
+      "description": "일이나 임무를 나누어 맡음 (ex. 신규입사자가 있어 업무 분장을 새로 했습니다)"
+    },
+    {
+      "term": "불출 (Issue)",
+      "description": "돈이나 물품을 내줌. 주기적으로 지급되는 경우에 주로 사용된다"
+    },
+    {
+      "term": "붙임 (Attachment)",
+      "description": "글에서 빠진 것이나 참고할 내용을 뒤에 덧붙여 적은 것"
+    },
+    {
+      "term": "사안 (Matter)",
+      "description": "문제가 되는 일이나 계획"
+    },
+    {
+      "term": "사일로 (Silo)",
+      "description": "팀끼리 벽을 치고 협력·소통하지 않는 상태"
+    },
+    {
+      "term": "상동 (Same as above)",
+      "description": "①서로 같음 ②위에 적힌 사실과 같음"
+    },
+    {
+      "term": "세금계산서 (Tax Invoice)",
+      "description": "물건을 사고팔 때 부가가치세법에 따라 발행하는 영수증"
+    },
+    {
+      "term": "세미나 (Seminar)",
+      "description": "연구회, 발표회, 토론회"
+    },
+    {
+      "term": "소구 (Appeal)",
+      "description": "소비자의 구매욕을 자극하기 위해 상품의 특성이나 매력을 호소하는 것"
+    },
+    {
+      "term": "소스 (Source)",
+      "description": "정보의 출처, 혹은 정보를 제공하는 사람이나 자료"
+    },
+    {
+      "term": "소프트카피 (Soft copy)",
+      "description": "종이로 출력하지 않은 디지털 형태의 문서"
+    },
+    {
+      "term": "수기 (Handwriting)",
+      "description": "글을 자기 손으로 직접 씀. 자동화 작업이 아니라 일일이 직접 입력해야 하는 업무를 '수기 업무'라고 칭한다"
+    },
+    {
+      "term": "순연 (Postponement)",
+      "description": "차례로 기일을 늦춤 (ex. 경제 불황으로 대규모 투자 계획을 순연하기로 했습니다)"
+    },
+    {
+      "term": "스콥 (Scope)",
+      "description": "범위. 업무범위를 가리킬 때 '업무스콥'이라고 표현함"
+    },
+    {
+      "term": "스크럼 (Scrum)",
+      "description": "팀 단위에서 주기적으로 업무를 계획해 짧은 기간동안 작업을 수행하는 업무 방식, 또는 이러한 업무를 위한 회의"
+    },
+    {
+      "term": "스크리닝 (Screening)",
+      "description": "초기 단계에서 상품을 테스트해 선별하는 일"
+    },
+    {
+      "term": "스탠스 (Stance)",
+      "description": "어떤 일에 대한 공개적인 입장, 태도"
+    },
+    {
+      "term": "스프린트 (Sprint)",
+      "description": "단기간에 집중해 프로젝트를 완료하는 업무 방식"
+    },
+    {
+      "term": "싱크 (Sync)",
+      "description": "작업끼리 수행 시기를 발 맞추는 것 (ex. 싱크 맞춰서 진행해 주세요)"
+    },
+    {
+      "term": "아웃풋 (Output)",
+      "description": "투입한 자원으로 결과물을 생산해내는 것. 혹은 그 결과"
+    },
+    {
+      "term": "아이데이션 (Ideation)",
+      "description": "아이디어를 얻기 위해 행하는 모든 활동"
+    },
+    {
+      "term": "안건 (Agenda Item)",
+      "description": "토의하거나 조사하여야 할 사실"
+    },
+    {
+      "term": "애자일 (Agile)",
+      "description": "빠르고 유연하게 의사결정하고 변화에 민첩하게 대응하는 조직 운영 방식"
+    },
+    {
+      "term": "액션 아이템 (Action Item)",
+      "description": "실행 과제"
+    },
+    {
+      "term": "양지 (Note)",
+      "description": "살펴서 알다 (ex. 유의사항을 양지하시기 바랍니다)"
+    },
+    {
+      "term": "어레인지 (Arrange)",
+      "description": "처리하다, 정리하다, 조율하다 (ex. 촬영 장소 어레인지 해주세요)"
+    },
+    {
+      "term": "어사인 (Assign)",
+      "description": "업무를 배정하다, 맡기다"
+    },
+    {
+      "term": "얼라인 (Align)",
+      "description": "(목표나 방향을) 일치시키다, 결을 맞추다"
+    },
+    {
+      "term": "얼터 (Alternative)",
+      "description": "대안"
+    },
+    {
+      "term": "영업이익 (Operating Profit)",
+      "description": "매출액에서 원가와 판매관리비용을 차감한 금액"
+    },
+    {
+      "term": "영업일 (Business Day)",
+      "description": "업체가 실제로 문을 열고 영업을 하는 날 (ex. 5영업일 후 처리될 예정입니다)"
+    },
+    {
+      "term": "온보딩 (On boarding)",
+      "description": "조직에 잘 정착할 수 있도록 돕는 교육 과정"
+    },
+    {
+      "term": "워크숍 (Workshop)",
+      "description": "공동 연수, 공동 수련"
+    },
+    {
+      "term": "워킹데이 (Working day)",
+      "description": "근무일. 대체로 평일을 가리킨다"
+    },
+    {
+      "term": "워터폴 (Waterfall)",
+      "description": "정해진 단계에 따라 순차적으로 일을 진행하는 조직 운영 방식"
+    },
+    {
+      "term": "위임 (Delegation)",
+      "description": "사무 처리를 다른 사람에게 맡기는 것"
+    },
+    {
+      "term": "유선 (Phone)",
+      "description": "전선에 의한 통신 방식. '전화'를 가리킨다 (ex. 유선으로 설명 드렸다시피~)"
+    },
+    {
+      "term": "유첨 (Attachment)",
+      "description": "파일 등을 첨부함"
+    },
+    {
+      "term": "이관 (Transfer)",
+      "description": "받은 공문이나 알림을 다른 부서로 보냄 (동의어: 이첩)"
+    },
+    {
+      "term": "이슈 (Issue)",
+      "description": "문제가 되는 일"
+    },
+    {
+      "term": "인벌브 (Involve)",
+      "description": "참여하다, 관여하다 (ex. 이 프로젝트에는 누가 인볼브 되어 있나요?)"
+    },
+    {
+      "term": "인보이스 (Invoice)",
+      "description": "청구서, 명세서"
+    },
+    {
+      "term": "인비 (Invitation)",
+      "description": "①인사에 관계된 비밀, 혹은 그런 서류 ②초대하다. Invitation의 준말 (ex. 미팅 일정 확정시 인비 드리겠습니다)"
+    },
+    {
+      "term": "인사이트 (Insight)",
+      "description": "통찰력. 사물이나 현상의 본질을 꿰뚫는 것"
+    },
+    {
+      "term": "인폼 (Inform)",
+      "description": "정보를 알리다"
+    },
+    {
+      "term": "인풋 (Input)",
+      "description": "생산 자원이나 정보를 투입하는 것"
+    },
+    {
+      "term": "재무 (Finance)",
+      "description": "기업의 자금을 조달하고 운용하는 것"
+    },
+    {
+      "term": "재무제표 (Financial Statement)",
+      "description": "기업의 재무상태 파악을 위해 회계 원칙에 따라 작성한 보고서"
+    },
+    {
+      "term": "재고 (Stock/Inventory)",
+      "description": "①어떤 일이나 사안에 대해 다시 생각해보는 것 ②팔다 남아서 창고에 쌓여있는 물건"
+    },
+    {
+      "term": "전결 (Delegated Approval)",
+      "description": "권한을 위임받은 사람이 대신 결재하는 것"
+    },
+    {
+      "term": "제고 (Improvement)",
+      "description": "수준이나 정도를 끌어올림 (ex. 기업 이미지를 제고하다)"
+    },
+    {
+      "term": "제위 (Dear All)",
+      "description": "'여러분'과 같은 뜻 (ex. 수신자 제위)"
+    },
+    {
+      "term": "제의 (Proposal)",
+      "description": "의견이나 의논을 내놓음"
+    },
+    {
+      "term": "지결 (Payment Approval)",
+      "description": "회사의 돈을 써야할 때 그 내역을 검토하고 결정하는 일. 지출결의서는 비용 지출에 대한 승인을 요청할 때 작성하는 문서를 가리킨다"
+    },
+    {
+      "term": "지급 (Payment)",
+      "description": "①돈이나 물건을 정해진 몫만큼 내줌 ②매우 급함"
+    },
+    {
+      "term": "지양 (Refrain)",
+      "description": "더 높은 단계로 오르기 위해 어떤 것을 하지 않음 (ex. 늑장대응은 지양해야 합니다)"
+    },
+    {
+      "term": "지표 (Index/Indicator)",
+      "description": "방향이나 목적, 기준을 나타내는 표지"
+    },
+    {
+      "term": "지향 (Aim)",
+      "description": "어떤 목표로 뜻이 향함"
+    },
+    {
+      "term": "차일 (The Day)",
+      "description": "바로 앞에서 이야기한 날"
+    },
+    {
+      "term": "착수 (Start)",
+      "description": "어떤 일을 시작함"
+    },
+    {
+      "term": "참고 (Reference)",
+      "description": "살펴서 생각함, 살펴서 도움이 될 만한 재료로 삼음"
+    },
+    {
+      "term": "출타 (Out of Office)",
+      "description": "다른 곳에 외출함"
+    },
+    {
+      "term": "커피챗 (Coffee chat)",
+      "description": "커피를 마시며 캐주얼하게 이야기 나누는 미팅"
+    },
+    {
+      "term": "컨선 (Concern)",
+      "description": "우려"
+    },
+    {
+      "term": "컨퍼런스 (Conference)",
+      "description": "특정 주제에 관해 사람들이 모여 토론하는 대규모 회의나 모임"
+    },
+    {
+      "term": "컨퍼런스콜 (Conference call)",
+      "description": "3인 이상이 전화로 진행하는 회의"
+    },
+    {
+      "term": "컨펌 (Confirm)",
+      "description": "승인하다, 확인하다"
+    },
+    {
+      "term": "컬쳐덱 (Culture deck)",
+      "description": "조직문화를 문서화한 자료"
+    },
+    {
+      "term": "컷오프 (Cut off)",
+      "description": "주로 물류업계에서 화물 반입 마감 시간을 가리킨다"
+    },
+    {
+      "term": "케이스스터디 (Case study)",
+      "description": "사례 조사, 사례 연구"
+    },
+    {
+      "term": "케파 (Capacity)",
+      "description": "능력, 역량. 주로 생산 가능한 최대치를 표현할 때 사용한다"
+    },
+    {
+      "term": "크로스체크 (Cross check)",
+      "description": "여러 명의 관점으로 정보나 문서를 검사하는 것"
+    },
+    {
+      "term": "타깃 (Target)",
+      "description": "대상, 목표"
+    },
+    {
+      "term": "타운홀미팅 (Town hall meeting)",
+      "description": "전 직원이 모여 의견을 주고받는 회의"
+    },
+    {
+      "term": "탑다운 (Top down)",
+      "description": "상사가 부하에게 업무를 지시하는 방식. 바텀업과 반대 개념"
+    },
+    {
+      "term": "태스크 (Task)",
+      "description": "과업. 꼭 해야 할 일이나 임무"
+    },
+    {
+      "term": "토스 (Toss)",
+      "description": "전달하다, 상대에게 넘기다"
+    },
+    {
+      "term": "톤앤매너 (Tone & Manner)",
+      "description": "분위기나 어조, 태도 등 기업과 브랜드의 정체성을 나타내는 요소"
+    },
+    {
+      "term": "트래픽 (Traffic)",
+      "description": "특정사이트 등의 접속/이용량"
+    },
+    {
+      "term": "팔로업 (Follow up)",
+      "description": "후속조치, 사후점검 (ex. 제품 출시 후 이상 없는지 계속 팔로업해주세요)"
+    },
+    {
+      "term": "페르소나 (Persona)",
+      "description": "고객(타깃)을 구체화한 것 (ex. 우리의 페르소나는 스포츠를 즐기는 외향적인 30대 여성 직장인입니다)"
+    },
+    {
+      "term": "펜딩 (Pending)",
+      "description": "결정되지 않고 보류중인 상태"
+    },
+    {
+      "term": "폐사 (Our Company)",
+      "description": "말하는 이가 자기 회사를 낮추어 이르는 말"
+    },
+    {
+      "term": "포워드 (Forward)",
+      "description": "전달하다, 주로 메일을 다른 사람에게 전달할 때 사용함"
+    },
+    {
+      "term": "품의 (Consultation)",
+      "description": "상사에게 말이나 글로 여쭈어 의논함"
+    },
+    {
+      "term": "프레임워크 (Framework)",
+      "description": "어떤 일에 대한 판단·결정을 위한 틀"
+    },
+    {
+      "term": "피드백 (Feedback)",
+      "description": "작업한 일의 결과에 대해 평가나 의견, 조언을 주는 것"
+    },
+    {
+      "term": "피봇팅 (Pivoting)",
+      "description": "사업체는 그대로 유지한 채 사업의 방향을 바꾸는 것"
+    },
+    {
+      "term": "피저빌리티 (Feasibility)",
+      "description": "실현가능성"
+    },
+    {
+      "term": "픽스 (Fix)",
+      "description": "확정"
+    },
+    {
+      "term": "하기 (Below)",
+      "description": "①어떤 사실을 알리기 위해 본문 아래에 적는 것. 또는 그런 기록 ②돈을 치른 내용을 적은 기록"
+    },
+    {
+      "term": "하드카피 (Hard copy)",
+      "description": "문서를 인쇄물로 출력한 것"
+    },
+    {
+      "term": "협의 (Discussion)",
+      "description": "둘 이상의 사람이 서로 협력해 의논함"
+    },
+    {
+      "term": "혼선 (Confusion)",
+      "description": "말이나 업무 등을 서로 다르게 파악해 혼란이 발생하는 것"
+    },
+    {
+      "term": "홀딩 (Holding)",
+      "description": "일시 중지"
+    },
+    {
+      "term": "회계 (Accounting)",
+      "description": "돈의 흐름을 기록하고 보고하는 것"
+    },
+    {
+      "term": "회람 (Circulation)",
+      "description": "글이나 문서를 여러 사람이 차례로 돌려 봄"
+    },
+    {
+      "term": "회신 (Reply)",
+      "description": "편지나 전화 등으로 답변 함"
+    },
+    {
+      "term": "AOB (Any Other Business)",
+      "description": "의제 외 기타사항"
+    },
+    {
+      "term": "As-is",
+      "description": "현재 상태. 주로 실행 전/후 차이를 보여주어야 하는 보고서에서 To-be와 함께 사용한다"
+    },
+    {
+      "term": "BCC (Blind Carbon Copy)",
+      "description": "숨은 참조. 수신자에게 보이지 않게 메일 참조를 걸고 싶을 때 사용한다"
+    },
+    {
+      "term": "BEP (Break Even Point)",
+      "description": "손익분기점. 일정 기간동안의 총 비용과 총 수익이 동일한 지점"
+    },
+    {
+      "term": "BM (Business Model)",
+      "description": "비즈니스 모델. 기업의 총체적인 사업 아이디어"
+    },
+    {
+      "term": "BP (Best Practice)",
+      "description": "산업별로 가장 잘하고 있는 사업 방식, 모범 경영 사례"
+    },
+    {
+      "term": "Comm. (Communication)",
+      "description": "커뮤니케이션, 의사소통"
+    },
+    {
+      "term": "CRM (Customer Relationship Management)",
+      "description": "고객과의 관계 관리를 통해 장기 충성고객을 확보하는 마케팅"
+    },
+    {
+      "term": "DB (Database)",
+      "description": "여러 사람이 공유해 사용할 목적으로 통합 관리되는 데이터의 집합"
+    },
+    {
+      "term": "e.g.",
+      "description": "예를 들어 (라틴어 exempli gratia를 줄인 것. for example로 읽음)"
+    },
+    {
+      "term": "EOB (End Of Business)",
+      "description": "업무 종료 시각"
+    },
+    {
+      "term": "EOD (End Of Documents)",
+      "description": "문서의 끝"
+    },
+    {
+      "term": "EOM (End Of message)",
+      "description": "제곧내. 메일 제목이 곧 내용임"
+    },
+    {
+      "term": "FYI (For Your Information)",
+      "description": "참고하세요"
+    },
+    {
+      "term": "FYR (For Your Reference)",
+      "description": "참고하세요 (FYI보다 덜 중요할 때 사용)"
+    },
+    {
+      "term": "H (Half of the year)",
+      "description": "반기 (ex. 1H- 상반기, 2H- 하반기)"
+    },
+    {
+      "term": "HR (Human Resources)",
+      "description": "인적자원(인사)에 관련된 일"
+    },
+    {
+      "term": "i.e.",
+      "description": "즉, 다시 말해 (라틴어 id est)"
+    },
+    {
+      "term": "KPI (Key Performance Indicator)",
+      "description": "핵심성과지표. 목표를 이루기 위해 달성해야 하는 지표"
+    },
+    {
+      "term": "KSF (Key Success Factors)",
+      "description": "핵심성공요인"
+    },
+    {
+      "term": "MECE (Mutually Exclusive Collectively Exhaustive)",
+      "description": "내용이 서로 중복되지 않으면서 누락되지 않게 정리하는 것"
+    },
+    {
+      "term": "MoM (Month over Month)",
+      "description": "전월 대비 증감률"
+    },
+    {
+      "term": "MVP (Minimum Viable Pruduct)",
+      "description": "시장의 피드백을 받기 위해 최소한의 핵심기능만으로 구현한 테스트 제품"
+    },
+    {
+      "term": "N/A (Not Applicable)",
+      "description": "해당사항 없음"
+    },
+    {
+      "term": "NDA (Non Disclosure Agreement)",
+      "description": "비밀유지계약서"
+    },
+    {
+      "term": "OJT (On the Job Training)",
+      "description": "직장 내 교육 훈련"
+    },
+    {
+      "term": "OKR (Objectives and Key Results)",
+      "description": "조직의 이상적인 목표를 수립하고 이를 달성했다고 말할 수 있는 핵심 성과 지표를 설정하는 조직 관리 방식"
+    },
+    {
+      "term": "PM (Product/Project Manager)",
+      "description": "제품 또는 프로젝트의 관리자"
+    },
+    {
+      "term": "PO (Product Owner)",
+      "description": "제품의 전반을 책임지는 디렉터이자 리더. 대체로 PM보다 더 많은 역할과 책임이 부여됨"
+    },
+    {
+      "term": "Q (Quarter of the year)",
+      "description": "분기 (ex. 1Q- 1분기, 2Q- 2분기)"
+    },
+    {
+      "term": "QoQ (Quarter over Quarter)",
+      "description": "전분기 대비 증감률"
+    },
+    {
+      "term": "R&R (Roles & Responsibilities)",
+      "description": "역할과 책임 (ex. R&R이 불명확해서 업무 누락이 발생하네요)"
+    },
+    {
+      "term": "ROAS (Return On Advertising Spend)",
+      "description": "광고비용 대비 매출. 광고 매출 ÷ 광고비 × 100"
+    },
+    {
+      "term": "ROI (Return On Investment)",
+      "description": "투자 대비 이익률. 이익 ÷ 투자액 × 100"
+    },
+    {
+      "term": "T/O (Table of Organization)",
+      "description": "조직 편성도. 주로 조직에 자리가 비었을 때 'T/O가 났다'고 표현함"
+    },
+    {
+      "term": "TBA (To Be Announced)",
+      "description": "추후에 공고함"
+    },
+    {
+      "term": "TBD (To Be Determined)",
+      "description": "추후에 결정함"
+    },
+    {
+      "term": "TF (Task Force)",
+      "description": "특정 프로젝트를 위해 임시로 조직된 팀. TFT(Task Force Team)라고도 쓴다"
+    },
+    {
+      "term": "To-be",
+      "description": "추후 개선안. 주로 실행 전/후 차이를 보여주어야 하는 보고서에서 As-is와 함께 사용한다"
+    },
+    {
+      "term": "VoC (Voice of Customer)",
+      "description": "고객의 소리"
+    },
+    {
+      "term": "VP (Value Proposition)",
+      "description": "핵심 가치"
+    },
+    {
+      "term": "w (With)",
+      "description": "함께, 포함해 (ex. w.영업부)"
+    },
+    {
+      "term": "w/o (Without)",
+      "description": "미포함, ~를 제외하고"
+    },
+    {
+      "term": "YoY (Year over Year)",
+      "description": "전년 대비 증감률"
+    }
+  ]
+} 
