@@ -4,21 +4,15 @@
     "version": "1.0",
     "description": "업무 용어에 약한 신입, 그리고 파일에서 내가 모르는 용어들을 확인하는 간편함",
     "permissions": [
-      "activeTab",
-      "scripting",
-      "tabs"
+      "sidePanel"
     ],
-    "host_permissions": [
-      "<all_urls>"
-    ],
-    "action": {
-      "default_popup": "popup.html"
+    "background": {
+      "service_worker": "js/background.js"
     },
-    "web_accessible_resources": [{
-      "resources": ["data/terms.json"],
-      "matches": ["<all_urls>"]
-    }],
-    "content_security_policy": {
-        "extension_pages": "script-src 'self'; object-src 'self'"
+    "action": {
+      "default_title": "비즈코드 열기"
+    },
+    "side_panel": {
+      "default_path": "sidepanel.html"
     }
-  }
+}

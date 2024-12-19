@@ -1,8 +1,12 @@
 body {
-  width: 500px;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
   padding: 15px;
   font-family: 'Noto Sans KR', sans-serif;
   background-color: #f5f5f5;
+  box-sizing: border-box;
+  overflow-x: hidden;
 }
 
 h2 {
@@ -46,16 +50,14 @@ button:active {
 }
 
 .content-area {
-  margin-top: 20px;
+  height: calc(100vh - 120px);
+  overflow-y: auto;
 }
 
 .feature-area {
+  height: 100%;
+  position: relative;
   display: none;
-  padding: 20px;
-  background-color: #e0e0e0;
-  border-radius: 10px;
-  min-height: 200px;
-  margin-top: 15px;
 }
 
 .feature-area.active {
@@ -142,35 +144,162 @@ button:active {
 }
 
 .search-container {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 10px;
+  margin-bottom: 16px;
+  position: relative;
 }
 
 #searchInput {
-  flex: 1;
-  padding: 8px 12px;
-  border: 1px solid #ddd;
-  border-radius: 4px;
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
   font-size: 14px;
+  box-sizing: border-box;
 }
 
-#searchButton {
-  padding: 8px 16px;
-  background-color: #4a90e2;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-#searchButton:hover {
-  background-color: #357abd;
+#searchInput:focus {
+  outline: none;
+  border-color: #1a73e8;
+  box-shadow: 0 0 0 1px #1a73e8;
 }
 
 /* 검색 결과 하이라이트 스타일 */
 .highlight {
   background-color: #fff3cd;
   padding: 2px;
+}
+
+/* 하이라이트 도구 영역 스타일 */
+.highlight-tools {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.tool-button {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 12px;
+  background: white;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: #3c4043;
+}
+
+.tool-button:hover {
+  background: #f1f3f4;
+  border-color: #1a73e8;
+}
+
+.tool-button.active {
+  background: #1a73e8;
+  border-color: #1557b0;
+  color: white;
+}
+
+.tool-button .material-icons {
+  font-size: 24px;
+  color: #3c4043;
+}
+
+.tool-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: inherit;
+}
+
+/* 선택된 단어 영역 스타일 */
+.selected-words-container {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  overflow: hidden;
+}
+
+.selected-words-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dadce0;
+}
+
+.selected-words-header h3 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #3c4043;
+}
+
+.selected-words-header .material-icons {
+  color: #1a73e8;
+  font-size: 20px;
+}
+
+.selected-words {
+  padding: 16px;
+  min-height: 200px;
+  max-height: calc(100vh - 300px);
+  overflow-y: auto;
+}
+
+.selected-word {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  margin-bottom: 8px;
+  background: #f8f9fa;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.selected-word:hover {
+  border-color: #1a73e8;
+  background: #f1f3f4;
+}
+
+/* 스크롤바 스타일 유지 */
+.selected-words::-webkit-scrollbar {
+  width: 8px;
+}
+
+.selected-words::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.selected-words::-webkit-scrollbar-thumb {
+  background: #dadce0;
+  border-radius: 4px;
+}
+
+.selected-words::-webkit-scrollbar-thumb:hover {
+  background: #bdc1c6;
+}
+
+.delete-word {
+  cursor: pointer;
+  font-size: 18px;
+  color: #5f6368;
+  padding: 4px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.delete-word:hover {
+  background-color: #e8eaed;
+  color: #d93025;
 }

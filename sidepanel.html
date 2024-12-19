@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>비즈코드</title>
+  <link href="styles.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <div class="button-container">
+    <button id="cleanButton">
+      <span class="material-icons">list_alt</span>
+      용어 정리
+    </button>
+    <button id="highlightButton" class="gray">
+      <span class="material-icons">highlight</span>
+      하이라이트 표시
+    </button>
+    <button id="noteButton">
+      <span class="material-icons">note_add</span>
+      빈 상자
+    </button>
+  </div>
+  <div class="content-area">
+    <div id="cleanArea" class="feature-area">
+      <div class="search-container">
+        <input type="text" id="searchInput" placeholder="용어 검색...">
+      </div>
+      <table class="terms-table">
+        <thead>
+          <tr>
+            <th>용어</th>
+            <th>설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- 여기는 비워둡니다. termManager.js가 동적으로 채울 것입니다 -->
+        </tbody>
+      </table>
+      <div class="pagination"></div>
+    </div>
+    <div id="highlightArea" class="feature-area active">
+      <div class="highlight-tools">
+        <button id="cursorButton" class="tool-button" title="텍스트 선택">
+          <span class="material-icons">mouse</span>
+          <span class="tool-label">텍스트 선택</span>
+        </button>
+        <button id="termHighlightButton" class="tool-button" title="용어 하이라이트">
+          <span class="material-icons">border_color</span>
+          <span class="tool-label">용어 하이라이트</span>
+        </button>
+      </div>
+      <div class="selected-words-container">
+        <div class="selected-words-header">
+          <span class="material-icons">format_list_bulleted</span>
+          <h3>선택된 텍스트</h3>
+        </div>
+        <div class="selected-words">
+          <!-- 선택된 단어들이 여기에 동적으로 추가됩니다 -->
+        </div>
+      </div>
+    </div>
+    <div id="noteArea" class="feature-area">빈 상자 화면</div>
+  </div>
+  <script src="js/termManager.js"></script>
+  <script src="js/highlightManager.js"></script>
+  <script src="js/sidepanel.js"></script>
+</body>
+</html> 

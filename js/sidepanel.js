@@ -16,6 +16,10 @@ document.addEventListener('DOMContentLoaded', () => {
     Object.values(areas).forEach(area => {
       area.classList.remove('active');
     });
+    // 모든 버튼 비활성화
+    Object.values(buttons).forEach(button => {
+      button.classList.remove('gray');
+    });
   }
 
   // 버튼 클릭 이벤트 처리
@@ -24,14 +28,16 @@ document.addEventListener('DOMContentLoaded', () => {
       hideAllAreas();
       const areaKey = key.replace('Button', 'Area');
       areas[areaKey].classList.add('active');
+      button.classList.add('gray');  // 클릭된 버튼 활성화
     });
   });
 
-  // TermManager 초기화 및 용어 로드
-  const termManager = new TermManager();
-
-  // 초기에는 용어 정리 영역 표시 및 데이터 로드
+  // 초기 상태 설정
   hideAllAreas();
   areas.cleanArea.classList.add('active');
-  termManager.loadTerms(); // 초기 데이터 로드
-});
+  buttons.cleanButton.classList.add('gray');
+  
+  // TermManager 초기화 및 용어 로드
+  const termManager = new TermManager();
+  termManager.loadTerms();
+}); 

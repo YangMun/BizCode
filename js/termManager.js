@@ -21,23 +21,10 @@ class TermManager {
 
   setupSearch() {
     const searchInput = document.getElementById('searchInput');
-    const searchButton = document.getElementById('searchButton');
 
-    // 검색 버튼 클릭 이벤트
-    searchButton.addEventListener('click', () => {
-      this.searchTerms(searchInput.value);
-    });
-
-    // 엔터 키 이벤트
-    searchInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        this.searchTerms(searchInput.value);
-      }
-    });
-
-    // 실시간 검색 (선택적)
-    searchInput.addEventListener('input', () => {
-      this.searchTerms(searchInput.value);
+    // 실시간 검색을 위한 이벤트 리스너
+    searchInput.addEventListener('input', (e) => {
+      this.searchTerms(e.target.value);
     });
   }
 
