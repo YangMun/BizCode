@@ -4,7 +4,14 @@
     "version": "1.0",
     "description": "업무 용어에 약한 신입, 그리고 파일에서 내가 모르는 용어들을 확인하는 간편함",
     "permissions": [
-      "sidePanel"
+      "sidePanel",
+      "activeTab",
+      "scripting",
+      "storage",
+      "tabs"
+    ],
+    "host_permissions": [
+      "file://*"
     ],
     "background": {
       "service_worker": "js/background.js"
@@ -14,5 +21,15 @@
     },
     "side_panel": {
       "default_path": "sidepanel.html"
-    }
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "<all_urls>",
+          "file:///*"
+        ],
+        "js": ["js/textSelector.js"],
+        "css": ["css/textSelector.css"]
+      }
+    ]
 }
