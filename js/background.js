@@ -17,18 +17,38 @@ chrome.action.onClicked.addListener((tab) => {
 // 탭 변경 감지
 chrome.tabs.onActivated.addListener(async (activeInfo) => {
   const tab = await chrome.tabs.get(activeInfo.tabId);
-  if (activeTabId && tab.url !== currentUrl) {
-    chrome.runtime.reload();
-  }
   activeTabId = activeInfo.tabId;
+  
+  // URL이 변경되었다면 사이드패널 비활성화
+  if (currentUrl && currentUrl !== tab.url) {
+    chrome.sidePanel.setOptions({ enabled: false });
+    // 다시 활성화
+    setTimeout(() => {
+      chrome.sidePanel.setOptions({ enabled: true });
+    }, 100);
+  }
   currentUrl = tab.url;
 });
 
 // URL 변경 감지
 chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
-  if (activeTabId === tabId && changeInfo.url && changeInfo.url !== currentUrl) {
-    chrome.runtime.reload();
-    currentUrl = changeInfo.url;
+  if (activeTabId === tabId) {
+    // 페이지 새로고침 감지
+    if (changeInfo.status === 'loading') {
+      // 사이드패널에 메시지 전송
+      chrome.runtime.sendMessage({ action: 'pageRefreshed' });
+    }
+    
+    // URL 변경 감지
+    if (changeInfo.url) {
+      if (currentUrl && currentUrl !== changeInfo.url) {
+        chrome.sidePanel.setOptions({ enabled: false });
+        setTimeout(() => {
+          chrome.sidePanel.setOptions({ enabled: true });
+        }, 100);
+      }
+      currentUrl = changeInfo.url;
+    }
   }
 });
 
@@ -37,28 +57,10 @@ chrome.tabs.onRemoved.addListener((tabId) => {
   if (activeTabId === tabId) {
     activeTabId = null;
     currentUrl = null;
+    chrome.sidePanel.setOptions({ enabled: false });
+    // 다시 활성화
+    setTimeout(() => {
+      chrome.sidePanel.setOptions({ enabled: true });
+    }, 100);
   }
-});
-
-// 현재 활성 탭 ID 가져오기
-async function getCurrentTabId() {
-  const tabs = await chrome.tabs.query({ active: true, currentWindow: true });
-  return tabs[0]?.id;
-}
-
-// 메시지 리스너 설정
-chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-  if (request.action === 'toggleTextSelection') {
-    getCurrentTabId().then(tabId => {
-      if (tabId) {
-        chrome.tabs.sendMessage(tabId, {
-          action: 'toggleTextSelection',
-          isActive: request.isActive
-        }).catch(error => {
-          console.log('Tab communication error:', error);
-        });
-      }
-    });
-  }
-  return true;
 });

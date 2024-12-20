@@ -40,35 +40,4 @@ document.addEventListener('DOMContentLoaded', () => {
   // TermManager 초기화 및 용어 로드
   const termManager = new TermManager();
   termManager.loadTerms();
-
-  // 선택된 단어 처리를 위한 메시지 리스너 추가
-  chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.action === 'updateSelectedWords') {
-      addSelectedWord(request.word);
-    }
-  });
-
-  function addSelectedWord(word) {
-    // 선택된 단어가 표시될 영역을 명확히 지정
-    const selectedWordsArea = document.querySelector('#highlightArea .selected-words');
-    
-    // 이미 존재하는 단어인지 확인
-    if (selectedWordsArea.querySelector(`[data-word="${word}"]`)) {
-      return;
-    }
-
-    const wordElement = document.createElement('div');
-    wordElement.className = 'selected-word';
-    wordElement.dataset.word = word;
-    wordElement.innerHTML = `
-      ${word}
-      <span class="delete-word material-icons">close</span>
-    `;
-
-    wordElement.querySelector('.delete-word').addEventListener('click', () => {
-      wordElement.remove();
-    });
-
-    selectedWordsArea.appendChild(wordElement);
-  }
 }); 
