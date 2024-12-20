@@ -303,3 +303,45 @@ button:active {
   background-color: #e8eaed;
   color: #d93025;
 }
+
+.uploaded-file-container {
+  margin: 16px 0;
+  padding: 12px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.file-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 4px;
+  font-size: 13px;
+  color: #3c4043;
+}
+
+.file-info .material-icons {
+  font-size: 20px;
+  color: #1a73e8;
+}
+
+#cursorButton label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  width: 100%;
+}
+
+.error-message {
+  color: #d93025;
+  padding: 12px;
+  background: #fce8e6;
+  border-radius: 8px;
+  font-size: 13px;
+  margin-top: 8px;
+}

@@ -43,14 +43,24 @@
     <div id="highlightArea" class="feature-area active">
       <div class="highlight-tools">
         <button id="cursorButton" class="tool-button" title="텍스트 선택">
-          <span class="material-icons">mouse</span>
-          <span class="tool-label">텍스트 선택</span>
+          <label for="fileInput">
+            <span class="material-icons">note_add</span>
+            <span class="tool-label">파일 업로드</span>
+          </label>
+          <input type="file" id="fileInput" accept=".txt,.doc,.docx,.pdf" style="display: none;">
         </button>
         <button id="termHighlightButton" class="tool-button" title="용어 하이라이트">
           <span class="material-icons">border_color</span>
           <span class="tool-label">용어 하이라이트</span>
         </button>
       </div>
+      
+      <div class="uploaded-file-container">
+        <div class="file-info">
+          <!-- 파일명이 여기에 표시됩니다 -->
+        </div>
+      </div>
+      
       <div class="selected-words-container">
         <div class="selected-words-header">
           <span class="material-icons">format_list_bulleted</span>
@@ -64,6 +74,7 @@
     <div id="noteArea" class="feature-area">빈 상자 화면</div>
   </div>
   <script src="js/termManager.js"></script>
+  <script src="js/fileManager.js"></script>
   <script src="js/highlightManager.js"></script>
   <script src="js/sidepanel.js"></script>
 </body>
