@@ -1,3 +1,5 @@
+import { TermManager } from './termManager.js';
+
 document.addEventListener('DOMContentLoaded', () => {
   const buttons = {
     cleanButton: document.getElementById('cleanButton'),
