@@ -1,4 +1,4 @@
-class TermManager {
+export class TermManager {
   constructor() {
     this.terms = [];
     this.currentPage = 1;
@@ -96,6 +96,4 @@ class TermManager {
       this.renderTerms();
     }
   }
-}
-
-const termManager = new TermManager(); 
+} 
