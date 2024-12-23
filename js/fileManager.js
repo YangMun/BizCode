@@ -9,11 +9,39 @@ class FileManager {
     this.currentPage = 1;
     this.itemsPerPage = 10;
     this.words = [];
+    this.terms = []; // terms.json의 데이터를 저장할 배열
     
     // PDF.js 워커 설정
-    pdfjsLib.GlobalWorkerOptions.workerSrc = 'lib/pdf.worker.mjs';
+    pdfjsLib.GlobalWorkerOptions.workerSrc = '../lib/pdf.worker.mjs';
     
+    this.loadTerms(); // terms.json 파일 로드
     this.initializeFileUpload();
+  }
+
+  // terms.json 파일 로드
+  async loadTerms() {
+    try {
+      const response = await fetch('data/terms.json');
+      const data = await response.json();
+      this.terms = data.terms;
+    } catch (error) {
+      console.error('용어 데이터 로드 실패:', error);
+    }
+  }
+
+  // 단어가 terms.json에 있는지 확인하는 함수
+  isTermMatch(word) {
+    return this.terms.some(term => {
+      const termWords = term.term.split(/[\/()]/); // 슬래시, 괄호로 구분된 단어들 분리
+      return termWords.some(termWord => {
+        // 한글 단어 비교
+        if (/[가-힣]/.test(word)) {
+          return termWord.trim() === word;
+        }
+        // 영어 단어 비교 (대소문자 무시)
+        return termWord.trim().toLowerCase() === word.toLowerCase();
+      });
+    });
   }
 
   initializeFileUpload() {
@@ -77,7 +105,6 @@ class FileManager {
 
   async readPdfContent(file) {
     try {
-      // 파일을 ArrayBuffer로 읽기
       const arrayBuffer = await new Promise((resolve, reject) => {
         const reader = new FileReader();
         reader.onload = (e) => resolve(e.target.result);
@@ -85,27 +112,111 @@ class FileManager {
         reader.readAsArrayBuffer(file);
       });
 
-      // PDF 문서 로드
       const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
       let fullText = '';
 
-      // 모든 페이지의 텍스트 추출
       for (let i = 1; i <= pdf.numPages; i++) {
         const page = await pdf.getPage(i);
         const textContent = await page.getTextContent();
-        const pageText = textContent.items.map(item => item.str).join(' ');
-        fullText += pageText + '\n';
+        
+        let lastItem = null;
+        let currentWord = '';
+        
+        for (const item of textContent.items) {
+          // 현재 아이템의 위치와 크기 정보
+          const itemX = item.transform[4];
+          const itemY = item.transform[5];
+          const itemWidth = item.width;
+          
+          if (lastItem) {
+            const lastX = lastItem.transform[4];
+            const lastY = lastItem.transform[5];
+            const lastWidth = lastItem.width;
+            
+            // 같은 줄에 있는지 확인 (Y좌표 차이가 작은 경우)
+            const isSameLine = Math.abs(itemY - lastY) < 2;
+            
+            // 글자 간격 계산
+            const charSpacing = itemX - (lastX + lastWidth);
+            
+            if (isSameLine && charSpacing < 5) {
+              // 같은 줄이고 글자 간격이 좁으면 이어붙임
+              currentWord += item.str;
+            } else {
+              // 새로운 단어 시작
+              if (currentWord) {
+                fullText += currentWord + ' ';
+                currentWord = '';
+              }
+              currentWord = item.str;
+            }
+          } else {
+            currentWord = item.str;
+          }
+          
+          lastItem = item;
+        }
+        
+        // 마지막 단어 처리
+        if (currentWord) {
+          fullText += currentWord + '\n';
+        }
       }
 
-      return fullText;
+      // 후처리: 불필요한 공백 제거 및 한글 단어 결합
+      return fullText
+        .replace(/\s+/g, ' ')
+        .trim()
+        .split(' ')
+        .map(word => word.trim())
+        .filter(word => word.length > 0)
+        .join('\n');
+
     } catch (error) {
       throw new Error('PDF 파일 읽기 실패: ' + error.message);
     }
   }
 
   displayContent(content) {
-    // 내용을 줄바꿈과 공백을 기준으로 단어 단위로 분리
-    this.words = content.split(/[\s\n]+/).filter(word => word.length > 0);
+    // 한글 단어 단위로 분리
+    const extractedWords = content
+      .split(/\n/)
+      .map(word => word.trim())
+      .map(word => {
+        // 괄호가 있는 경우 분리하여 처리
+        const bracketMatch = word.match(/([가-힣0-9a-zA-Z&]+)\(([가-힣0-9a-zA-Z&]+)\)/);
+        if (bracketMatch) {
+          return [bracketMatch[1], bracketMatch[2]];
+        }
+        // 영어 약어 패턴 (예: R&D, M&A) 매칭
+        const acronymMatch = word.match(/[A-Z](&[A-Z])+/);
+        if (acronymMatch) {
+          return [acronymMatch[0]];
+        }
+        // 일반 단어 매칭 (영어 약어 포함)
+        const wordMatch = word.match(/[가-힣0-9a-zA-Z]+|[A-Z](&[A-Z])+/g);
+        return wordMatch ? wordMatch : [];
+      })
+      .flat() // 중첩 배열을 평탄화
+      .filter(word => {
+        // 한글 자모음만 있는 경우 제외
+        const hasOnlyJamo = /^[\u1100-\u11FF\u3130-\u318F]+$/g.test(word);
+        // 길이가 1인 경우는 한글만 허용 (영어 약어 제외)
+        if (word.length === 1) {
+          return /^[가-힣]$/g.test(word);
+        }
+        // 영어 약어는 허용
+        if (word.includes('&')) {
+          return /^[A-Z](&[A-Z])+$/.test(word);
+        }
+        return word.length > 0 && !hasOnlyJamo;
+      });
+
+    // terms.json에 있는 단어만 필터링하고 중복 제거
+    this.words = [...new Set(
+      extractedWords.filter(word => this.isTermMatch(word))
+    )];
+    
     this.renderPage();
     this.renderPagination();
   }
@@ -144,7 +255,7 @@ class FileManager {
       this.currentPage = 1;
     }
     
-    // 페이지네이션 컨테이너가 없으면 생성
+    // 페이지이션 컨테이너가 없으면 생성
     let paginationContainer = document.querySelector('.file-pagination');
     if (!paginationContainer) {
       paginationContainer = document.createElement('div');
