@@ -10,12 +10,15 @@ class FileManager {
     this.itemsPerPage = 10;
     this.words = [];
     this.terms = []; // terms.json의 데이터를 저장할 배열
+    this.searchInput = null;
+    this.filteredWords = [];
     
     // PDF.js 워커 설정
     pdfjsLib.GlobalWorkerOptions.workerSrc = '../lib/pdf.worker.mjs';
     
     this.loadTerms(); // terms.json 파일 로드
     this.initializeFileUpload();
+    this.initializeSearchBar();
   }
 
   // terms.json 파일 로드
@@ -32,7 +35,7 @@ class FileManager {
   // 단어가 terms.json에 있는지 확인하는 함수
   isTermMatch(word) {
     return this.terms.some(term => {
-      const termWords = term.term.split(/[\/()]/); // 슬래시, 괄호로 구분된 단어들 분리
+      const termWords = term.term.split(/[\/()]/); // 슬래시, 괄호로 구분된 단어들 리
       return termWords.some(termWord => {
         // 한글 단어 비교
         if (/[가-힣]/.test(word)) {
@@ -178,34 +181,28 @@ class FileManager {
   }
 
   displayContent(content) {
-    // 한글 단어 단위로 분리
+    // 기존 단어 추출 로직은 유지
     const extractedWords = content
       .split(/\n/)
       .map(word => word.trim())
       .map(word => {
-        // 괄호가 있는 경우 분리하여 처리
         const bracketMatch = word.match(/([가-힣0-9a-zA-Z&]+)\(([가-힣0-9a-zA-Z&]+)\)/);
         if (bracketMatch) {
           return [bracketMatch[1], bracketMatch[2]];
         }
-        // 영어 약어 패턴 (예: R&D, M&A) 매칭
         const acronymMatch = word.match(/[A-Z](&[A-Z])+/);
         if (acronymMatch) {
           return [acronymMatch[0]];
         }
-        // 일반 단어 매칭 (영어 약어 포함)
         const wordMatch = word.match(/[가-힣0-9a-zA-Z]+|[A-Z](&[A-Z])+/g);
         return wordMatch ? wordMatch : [];
       })
-      .flat() // 중첩 배열을 평탄화
+      .flat()
       .filter(word => {
-        // 한글 자모음만 있는 경우 제외
         const hasOnlyJamo = /^[\u1100-\u11FF\u3130-\u318F]+$/g.test(word);
-        // 길이가 1인 경우는 한글만 허용 (영어 약어 제외)
         if (word.length === 1) {
           return /^[가-힣]$/g.test(word);
         }
-        // 영어 약어는 허용
         if (word.includes('&')) {
           return /^[A-Z](&[A-Z])+$/.test(word);
         }
@@ -217,6 +214,7 @@ class FileManager {
       extractedWords.filter(word => this.isTermMatch(word))
     )];
     
+    this.filteredWords = this.words; // 초기 필터링된 단어 목록 설정
     this.renderPage();
     this.renderPagination();
   }
@@ -224,28 +222,27 @@ class FileManager {
   renderPage() {
     const startIndex = (this.currentPage - 1) * this.itemsPerPage;
     const endIndex = startIndex + this.itemsPerPage;
-    const pageWords = this.words.slice(startIndex, endIndex);
+    const pageWords = this.filteredWords.slice(startIndex, endIndex);
     
-    this.selectedWords.innerHTML = pageWords.map(word => `
-      <div class="selected-word">
-        ${word}
-        <span class="material-icons delete-word" title="삭제">close</span>
-      </div>
-    `).join('');
-
-    // 삭제 버튼 이벤트 리스너 추가
-    this.selectedWords.querySelectorAll('.delete-word').forEach((button, index) => {
-      button.addEventListener('click', (e) => {
-        const globalIndex = startIndex + index;
-        this.words.splice(globalIndex, 1);
-        this.renderPage();
-        this.renderPagination();
+    this.selectedWords.innerHTML = pageWords.map(word => {
+      const termData = this.terms.find(term => {
+        const termWords = term.term.split(/[\/()]/);
+        return termWords.some(termWord => 
+          termWord.trim().toLowerCase() === word.toLowerCase()
+        );
       });
-    });
+
+      return `
+        <div class="selected-word">
+          <div class="term-header">${word}</div>
+          <div class="term-description">${termData ? termData.description : '설명이 없습니다.'}</div>
+        </div>
+      `;
+    }).join('');
   }
 
   renderPagination() {
-    const totalPages = Math.ceil(this.words.length / this.itemsPerPage);
+    const totalPages = Math.ceil(this.filteredWords.length / this.itemsPerPage);
     
     // 페재 페이지가 범위를 벗어나지 않도록 조정
     if (this.currentPage > totalPages) {
@@ -294,6 +291,44 @@ class FileManager {
         this.renderPagination();
       }
     });
+  }
+
+  initializeSearchBar() {
+    // 기존 헤더 대신 검색창을 포함한 새로운 헤더 추가
+    const searchHeader = document.createElement('div');
+    searchHeader.className = 'search-header';
+    searchHeader.innerHTML = `
+      <div class="search-container">
+        <span class="material-icons">search</span>
+        <input type="text" id="wordSearchInput" placeholder="용어 검색...">
+      </div>
+    `;
+    
+    // 기존 selected-words-header를 새로운 검색 헤더로 교체
+    const oldHeader = document.querySelector('.selected-words-header');
+    if (oldHeader) {
+      oldHeader.parentNode.replaceChild(searchHeader, oldHeader);
+    }
+
+    // 검색 입력 이벤트 리스너 설정
+    this.searchInput = document.getElementById('wordSearchInput');
+    this.searchInput.addEventListener('input', () => this.handleSearch());
+  }
+
+  handleSearch() {
+    const searchTerm = this.searchInput.value.toLowerCase().trim();
+    
+    if (searchTerm === '') {
+      this.filteredWords = this.words;
+    } else {
+      this.filteredWords = this.words.filter(word => 
+        word.toLowerCase().includes(searchTerm)
+      );
+    }
+    
+    this.currentPage = 1; // 검색 시 첫 페이지로 리셋
+    this.renderPage();
+    this.renderPagination();
   }
 }
 
