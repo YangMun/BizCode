@@ -15,12 +15,12 @@
       용어 정리
     </button>
     <button id="highlightButton" class="gray">
-      <span class="material-icons">highlight</span>
-      하이라이트 표시
+      <span class="material-icons">note_add</span>
+      문서 분석
     </button>
     <button id="noteButton">
-      <span class="material-icons">note_add</span>
-      빈 상자
+      <span class="material-icons">highlight</span>
+      국어사전
     </button>
   </div>
   <div class="content-area">
@@ -50,10 +50,6 @@
           </label>
           <input type="file" id="fileInput" accept=".txt,.doc,.docx,.pdf" style="display: none;">
         </button>
-        <button id="termHighlightButton" class="tool-button" title="용어 하이라이트">
-          <span class="material-icons">border_color</span>
-          <span class="tool-label">용어 하이라이트</span>
-        </button>
       </div>
       
       <div class="uploaded-file-container">
@@ -72,11 +68,50 @@
         </div>
       </div>
     </div>
-    <div id="noteArea" class="feature-area">빈 상자 화면</div>
+    <div id="noteArea" class="feature-area">
+      <div class="dictionary-search-header">
+        <div class="dictionary-search-container">
+          <span class="material-icons">search</span>
+          <input type="text" id="dictionarySearchInput" placeholder="단어 검색...">
+          <button id="dictionarySearchButton" class="dictionary-search-button">
+            <span class="material-icons">arrow_forward</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="dictionary-content">
+        <div class="dictionary-result">
+          <!-- 검색 전 안내 메시지 -->
+          <div class="dictionary-placeholder">
+            <span class="material-icons">menu_book</span>
+            <p>검색어를 입력하시면<br>표준국어대사전의 결과가 표시됩니다.</p>
+          </div>
+          
+          <!-- 검색 결과 예시 UI (실제 데이터는 나중에 연동) -->
+          <div class="dictionary-result-content" style="display: none;">
+            <div class="word-header">
+              <h3 class="word-title">검색된 단어</h3>
+              <span class="word-pronunciation">[발음]</span>
+            </div>
+            
+            <div class="word-meanings">
+              <div class="word-type">품사</div>
+              <ol class="meaning-list">
+                <li class="meaning-item">
+                  <span class="meaning-number">1.</span>
+                  <span class="meaning-text">단어의 뜻이 여기에 표시됩니다.</span>
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <script src="js/termManager.js" type="module"></script>
   <script src="js/fileManager.js" type="module"></script>
   <script src="js/highlightManager.js" type="module"></script>
   <script src="js/sidepanel.js" type="module"></script>
+  <script src="js/dictionaryManager.js" type="module"></script>
 </body>
 </html> 
