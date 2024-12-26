@@ -2,10 +2,12 @@
 
 ## 📌 소개
 업무 시 자주 사용되는 비즈니스 용어들을 쉽게 찾아보고 이해할 수 있는 크롬 확장 프로그램입니다.
-현재는 용어 검색 기능을 제공하며, 추후 하이라이트 기능과 메모 기능이 추가될 예정입니다.
+문서 분석 기능을 통해 업로드된 파일 내의 비즈니스 용어를 자동으로 감지하고, 국어사전 검색 기능을 제공합니다.
 
 ## ✨ 주요 기능
 - 📚 **비즈니스 용어 검색**: 200개 이상의 비즈니스 용어 데이터베이스
+- 📄 **문서 분석**: PDF, TXT 파일 내 비즈니스 용어 자동 감지
+- 📖 **국어사전 검색**: 용어의 정확한 의미 검색 기능
 - 🔍 **실시간 검색**: 타이핑과 동시에 검색 결과 표시
 - 📑 **페이지네이션**: 깔끔한 UI로 용어 목록 제공
 - 🎯 **직관적인 인터페이스**: 사용자 친화적인 디자인
@@ -20,27 +22,32 @@
 ```
 비즈코드/
 ├── data/
-│   ├── images/           # 이미지 리소스
-│   └── terms.json        # 200개 이상의 비즈니스 용어 데이터
+│   ├── images/           # 이미지 리소스 디렉토리
+│   └── terms.json        # 비즈니스 용어 데이터 (200+ 용어 포함)
 ├── js/
 │   ├── background.js     # 크롬 확장 프로그램 백그라운드 스크립트
-│   ├── fileManager.js    # 파일 업로드 관리
+│   ├── config.js         # 설정 관리
+│   ├── dictionaryManager.js # 사전 기능 관리
+│   ├── fileManager.js    # 파일 업로드 및 관리 기능
 │   ├── highlightManager.js # 하이라이트 기능 관리
-│   ├── sidepanel.js     # 사이드패널 UI 컨트롤
+│   ├── sidepanel.js     # 사이드패널 UI 컨트롤러
 │   └── termManager.js    # 용어 검색 및 표시 관리
 ├── lib/
-│   └── manifest.json     # 크롬 확장 프로그램 설정 파일
-├── README.md            # 프로젝트 설명서
-├── sidepanel.html       # 사이드패널 메인 HTML
-└── styles.css           # 전체 스타일시트
+│   ├── pdf.mjs          # PDF.js 라이브러리
+│   └── pdf.worker.mjs   # PDF.js 워커 스크립트
+├── .gitignore          # Git 무시 파일 설정
+├── manifest.json       # 크롬 확장 프로그램 설정 파일
+├── README.md          # 프로젝트 문서
+├── sidepanel.html     # 사이드패널 메인 HTML
+└── styles.css         # 전체 스타일시트
 ```
 
 ## 💻 주요 파일 설명
 - **manifest.json**: 크롬 확장 프로그램의 기본 설정 파일
 - **background.js**: 확장 프로그램의 백그라운드 작업 처리
+- **dictionaryManager.js**: 국어사전 검색 기능 관리
+- **fileManager.js**: 파일 업로드 및 문서 분석 기능 관리
 - **termManager.js**: 비즈니스 용어 검색 및 페이지네이션 처리
-- **fileManager.js**: 파일 업로드 기능 관리
-- **sidepanel.js**: 사이드패널 UI 이벤트 처리
 - **terms.json**: 비즈니스 용어 데이터베이스 (200+ 용어)
 - **styles.css**: UI 스타일 정의
 - **sidepanel.html**: 사이드패널 메인 화면 구조
@@ -48,6 +55,7 @@
 ## 🛠 기술 스택
 - HTML/CSS/JavaScript
 - Chrome Extension APIs
+- PDF.js
 - JSON
 
 ## 📋 설치 방법
