@@ -421,3 +421,163 @@ button:active {
   border-color: #1a73e8;
   box-shadow: 0 1px 2px rgba(0,0,0,0.1);
 }
+
+/* 사전 검색 영역 스타일 */
+.dictionary-search-header {
+  padding: 16px;
+  background: #f8f9fa;
+  border-bottom: 1px solid #dadce0;
+}
+
+.dictionary-search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  border: 1px solid #dadce0;
+  border-radius: 24px;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+  gap: 8px;
+}
+
+.dictionary-search-container:focus-within {
+  border-color: #1a73e8;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.dictionary-search-container .material-icons {
+  color: #5f6368;
+  margin-right: 8px;
+  font-size: 20px;
+}
+
+#dictionarySearchInput {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  color: #3c4043;
+  background: transparent;
+  margin-right: 8px;
+}
+
+#dictionarySearchInput::placeholder {
+  color: #80868b;
+}
+
+/* 사전 콘텐츠 영역 스타일 */
+.dictionary-content {
+  padding: 16px;
+  height: calc(100% - 85px);
+  overflow-y: auto;
+}
+
+/* 검색 전 안내 메시지 스타일 */
+.dictionary-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  color: #5f6368;
+  text-align: center;
+}
+
+.dictionary-placeholder .material-icons {
+  font-size: 48px;
+  margin-bottom: 16px;
+  color: #1a73e8;
+}
+
+.dictionary-placeholder p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 검색 결과 스타일 */
+.dictionary-result-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+
+.word-header {
+  margin-bottom: 16px;
+}
+
+.word-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #1a73e8;
+  margin: 0 0 4px 0;
+}
+
+.word-pronunciation {
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.word-type {
+  font-size: 13px;
+  color: #202124;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.meaning-list {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.meaning-item {
+  font-size: 14px;
+  color: #3c4043;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.meaning-number {
+  color: #1a73e8;
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+/* 검색 버튼 스타일 */
+.dictionary-search-button {
+  background-color: #1a73e8;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.dictionary-search-button .material-icons {
+  color: white;
+  font-size: 18px;
+  margin: 0;
+}
+
+.dictionary-search-button:hover {
+  background-color: #1557b0;
+}
+
+.dictionary-search-button:active {
+  transform: scale(0.95);
+}
+
+/* 로딩 애니메이션 */
+.loading {
+  animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
