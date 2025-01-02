@@ -10,8 +10,7 @@
         "128": "data/images/BizIcon128.png"
     },
     "permissions": [
-      "sidePanel",
-      "storage"
+      "sidePanel"
     ],
     "host_permissions": [
       "<all_urls>"
